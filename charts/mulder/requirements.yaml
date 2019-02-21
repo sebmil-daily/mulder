@@ -1,0 +1,4 @@
+dependencies:
+- name: redis
+  alias: mulder-redis
+  version: 4.0.12
