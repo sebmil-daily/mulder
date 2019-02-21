@@ -20,6 +20,10 @@ spec:
       containers:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        command:
+          - mulder
+          - "-redis-addr"
+          - "mulder-redis:6379"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
