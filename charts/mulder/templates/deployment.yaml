@@ -23,7 +23,7 @@ spec:
         command:
           - "/mulder"
           - "-redis-addr"
-          - "mulder-redis:6379"
+          - "{{ template "fullname" . }}-redis:6379"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
